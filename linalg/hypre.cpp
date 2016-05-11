@@ -3042,7 +3042,6 @@ HypreLOBPCG::SetOperator(Operator & A)
       MPI_Scan(&locSize, &part[1], 1, HYPRE_MPI_INT, MPI_SUM, comm);
 
       part[0] = part[1] - locSize;
-      part[1]++;
 
       MPI_Allreduce(&locSize, &glbSize, 1, HYPRE_MPI_INT, MPI_SUM, comm);
    }
